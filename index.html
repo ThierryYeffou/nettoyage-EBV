@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service de Nettoyage de l'Église</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo de l'église" class="logo">
+        <h1>Service de Nettoyage de l'Église</h1>
+    </header>
+    <main>
+        <p>Bienvenue sur le site du service de nettoyage. Inscrivez-vous pour le prochain dimanche !</p>
+        <a href="signup.html" class="btn">S'inscrire</a>
+        <h2>Inscriptions pour le prochain dimanche</h2>
+        <ul id="signup-list">
+            <!-- La liste des inscrits sera chargée ici -->
+        </ul>
+    </main>
+    <script>
+        fetch('inscriptions.json')
+        .then(response => response.json())
+        .then(data => {
+            const list = document.getElementById('signup-list');
+            data.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.nom} ${item.prenom}`;
+                list.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>

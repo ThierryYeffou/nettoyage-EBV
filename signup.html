@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Service de Nettoyage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo de l'église" class="logo">
+        <h1>Inscription pour le nettoyage</h1>
+    </header>
+    <main>
+        <form action="submit_signup.php" method="post">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+            <br>
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required>
+            <br>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="materiel">Matériel manquant (optionnel) :</label>
+            <input type="text" id="materiel" name="materiel">
+            <br>
+            <input type="submit" value="S'inscrire" class="btn">
+        </form>
+    </main>
+</body>
+</html>
